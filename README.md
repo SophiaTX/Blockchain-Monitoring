@@ -11,6 +11,13 @@ echo "deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stabl
 sudo apt-get update && sudo apt-get install influxdb
 sudo service influxdb start
 
+### Setup auth
+https://docs.influxdata.com/influxdb/v1.7/administration/authentication_and_authorization/  
+influx  
+CREATE USER <username> WITH PASSWORD '<password>' WITH ALL PRIVILEGES  
+  
+username & password are later used in telegraf.conf as credentials for influxdb  
+
 
 ## Telegraf:
 sudo apt-get update && sudo apt-get install telegraf  
